@@ -1,0 +1,791 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>vim编辑器 | 燕子的技术小站</title><meta name="author" content="燕子"><meta name="copyright" content="燕子"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="vim编辑器"><meta name="application-name" content="vim编辑器"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="vim编辑器"><meta property="og:url" content="http://example.com/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/index.html"><meta property="og:site_name" content="燕子的技术小站"><meta property="og:description" content="VIM 编辑器 1. Vim****简介与模式 Vim是一个高效文本编辑器，核心在于模式切换： 普通模式（Normal Mode）：移动光标、执行命令（启动时默认模式）。 插入模式（Insert Mode）：输入&amp;#x2F;编辑文本。 命令行模式（Command-line Mode）：保存、退出、搜"><meta property="og:locale" content="en"><meta property="og:image" content="https://yanzi-fairy1.oss-cn-beijing.aliyuncs.com/202509031614800.jpg"><meta property="article:author" content="燕子"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://yanzi-fairy1.oss-cn-beijing.aliyuncs.com/202509031614800.jpg"><meta name="description" content="VIM 编辑器 1. Vim****简介与模式 Vim是一个高效文本编辑器，核心在于模式切换： 普通模式（Normal Mode）：移动光标、执行命令（启动时默认模式）。 插入模式（Insert Mode）：输入&amp;#x2F;编辑文本。 命令行模式（Command-line Mode）：保存、退出、搜"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: 燕子","link":"Link: ","source":"Source: 燕子的技术小站","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '燕子的技术小站',
+  title: 'vim编辑器',
+  postAI: '',
+  pageFillDescription: '编辑器简介与模式是一个高效文本编辑器核心在于模式切换普通模式移动光标执行命令启动时默认模式插入模式输入编辑文本命令行模式保存退出搜索等操作启动与退出启动终端输入文件名文件不存在则新建退出普通模式下按进入命令行模式退出未修改时强制退出不保存修改保存并退出模式切换普通模式插入模式光标前插入光标后插入下一行插入插入模式普通模式按或基础移动普通模式方向键左下上右单词移动跳到下一个单词开头跳到上一个单词开头行内移动行首第一个非空字符行尾全文移动文件开头文件末尾跳转到第行编辑文本删除删除光标处字符删除一个单词删除整行撤销与重做撤销操作重做撤销的操作复制与粘贴复制当前行粘贴到光标后粘贴到光标前查找与替换查找普通模式下按输入关键词后回车如跳转到下一个匹配上一个替换替换当前行第一个匹配替换当前行所有匹配全文替换加确认每次替换如可视模式进入字符选择模式按字符选择进入行选择模式按行选择进入块选择模式垂直选择操作选中后按复制删除粘贴配置创建配置文件常用配置示例显示行号语法高亮缩进空格用空格代替基础操作练习初始文件准备文件初始内容手动输入分步练习任务打开文件并进入插入模式在末尾添加一行复制第行并粘贴到第行下方删除第行显示行号并跳转到第行原行创建并打开文件跳转到文件末尾进入插入模式输入后按跳转到第行复制当前行跳转到第行粘贴跳转到第行删除当前行显示行号跳转到第行将光标移动到行首插入查找所有并替换为仅替换前行撤销最后一次替换操作强制退出不保存模拟误操作重新打开文件并另存为保存并退出最终文件内容验证基础操作进入插入模式跳转行尾复制粘贴跳转到行首进入插入模式输入后按直接指定行号范围替换撤销操作强制退出重新打开另存为备份保存退出符号文件类型典型示例可视化特征普通文件黑色文本蓝色可执行文件目录文件蓝色文件夹图标块设备文件特殊设备标识字符设备文件终端设备标识符号链接文件浅蓝色带箭头图标删除行行号与跳转显示行号跳转行号视频中操作替换与撤销行号范围替换撤销文件管理保存退出强制退出新文件名另存为文件类型学习目标掌握命令查看文件类型理解不同文件类型的符号标识认识颜色显示与文件类型的关联性学会准确判断文件类型的方法核心命令命令格式输出示例文件类型符号说明第一列第一个字符文件名目录名操作演示查看普通文件类型查看目录文件类型查看设备文件类型颜色显示的不可靠性环境差异不同发行版默认颜色方案不同配置影响用户可能自定义环境变量终端限制远程连接可能丢失颜色信息关键原则文件颜色类型标识必须以输出为准综合练习练习类型判断指出每个文件的类型符号说明对应的文件类型验证文件实际类型是否符号显示用户管理输出示例注意加参数查看目录本身输出示例输出示例用户组的基本概念概念用户的作用查看当前登录的用户查看文件的查看运行进程的组总用量月月月月月月月月用户组存储的信息用户基本信息文件文件结构解析字段详细说明用户名登录系统的名字如密码占位符实际密码存储在此处为用户身份证号系统约定特权用户系统用户普通用户用户特性为拥有最高权限可覆盖文件系统权限管理软件和系统文件控制大多数硬件设备组号默认规则每创建一个用户系统会自动创建同名组描述用户描述信息如职位部门默认与用户名一致家目录用户登录后的默认目录如用户名描述登录用户的命令解释器如若设置为用户无法登录系统用户密码信息文件字段说明列冒号分隔登录名与中的用户名一致如加密口令格式加密算法加密结果特殊标记账号被锁定禁止登录密码已过期空无密码可直接登录最后一次修改时间从年月日纪元到密码最后一次修改的天数如最小时间间隔密码修改后必须经过该天数才能再次修改表示无限制最大有效天数密码有效期如表示永久有效警告天数密码到期前提前多少天发出警告如天不活动天数密码过期后允许用户不修改密码继续登录的天数超过则锁定账号失效时间账号的绝对过期时间从年月日起的天数到期后账号禁用保留字段未使用留空示例解析加密算法值加密结果密码策略最后一次修改时间年月日后的第天密码永久有效天密码到期前天发出警告注意事项密码字段为空用户无需密码即可登录高风险不推荐锁定账号在密码字段前添加或时间计算基准不同系统可能以不同时间为起点如使用年月日组信息文件文件结构解析字段说明列冒号分隔组名组的名称如组密码一般为实际组密码存储在通常不设置组组的唯一标识符如组成员属于该组的用户列表多个用户用逗号分隔默认值空仅包含同名用户但默认不显示示例解析组名组密码无实际密码组特权组组成员空未显式添加用户时仅包含同名用户注意事项基本组用户创建时自动生成同名组如用户的组附加组用户可手动加入其他组如将用户加入组用户组的管理用户管理组名组密码组组成员用户创建默认创建自动生成同名基本组说明用户编号唯一用户标识如组编号同名基本组的标识如规则未指定选项时系统自动创建同名组作为用户的主组指定选项创建验证用户删除注意事项选项会删除用户家目录和邮箱文件未加会导致残留文件可能影响后续创建同名用户组指定制定备注第三个用户指定家目录查看家目录是否修改彻底删除用户及家目录用户密码管理方法一修改其他用户密码方法二用户自行修改密码用户属性修改修改登录验证组成员管理将用户追加到附加组从组中移除用户输入两次新密码需输入原密码禁用用户登录查看登录字段是否为语法组名用户名示例验证组语法用户名组名示例用户组管理组基础操作创建组删除组组分类基本组随用户自动创建的同名组如组用户文件默认属组为基本组附加组用户手动加入的其他组如组用于扩展权限管理组成员管理示例创建共享目录验证权限默认创建指定验证设置属组为赋予组读写执行权限成功则权限生效注意事项修改前备份组权限生效条件用户需重新登录或使用命令删除用户必用避免残留文件导致后续操作失败用户与组管理综合实验实验目标掌握用户和组的创建删除及属性修改理解用户配置文件的结构学会设置用户密码组成员权限及共享目录访问控制实验步骤创建用户与验证基本信息默认创建用户指定选项创建用户创建用户指定为创建用户指定家目录为旧新修复文件属主验证和同名基本组查看用户信息验证是否生效验证家目录是否存在用户密码管理为用户设置密码用户自行修改密码修改用户属性禁用用户的登录尝试登录应失败用户组管理创建组和将用户加入附加组从组中移除用户输入两次密码查看加密后的密码字段切换到输入原密码后修改新密码返回验证登录是否修改预期提示此账户不可用指定为查看组信息将加入组将加入组验证组成员应显示组验证组成员应显示组共享目录权限验证创建共享目录并设置权限验证组成员权限用户属于组用户不在组清理实验环境删除用户及其家目录删除组删除共享目录将移出组验证组成员是否移除设置属组为赋予组读写执行权限验证权限应成功创建文件应提示权限被拒绝实验总结核心知识点用户管理命令的使用用户密码策略通过控制禁用登录可限制用户访问组管理命令的使用基本组自动创建与附加组手动加入的区别通过组权限实现共享目录的访问控制权限验证使用查看用户组关系通过和设置目录权限',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-09-10 15:59:57',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">燕子的技术小站</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> Newest Comments</span></div><div class="aside-list"><span>loading...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">August 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">July 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">vim编辑器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-07-26T16:00:00.000Z" title="Created 2025-07-27 00:00:00">2025-07-27</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2025-09-10T07:59:57.387Z" title="Updated 2025-09-10 15:59:57">2025-09-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://yanzi-fairy1.oss-cn-beijing.aliyuncs.com/202509031614800.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/"><header><h1 id="CrawlerTitle" itemprop="name headline">vim编辑器</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">燕子</span><time itemprop="dateCreated datePublished" datetime="2025-07-26T16:00:00.000Z" title="Created 2025-07-27 00:00:00">2025-07-27</time><time itemprop="dateCreated datePublished" datetime="2025-09-10T07:59:57.387Z" title="Updated 2025-09-10 15:59:57">2025-09-10</time></header><p><strong>VIM</strong> <strong>编辑器</strong></p>
+<p><strong>1. Vim****简介与模式</strong></p>
+<p>Vim是一个高效文本编辑器，核心在于<strong>模式切换</strong>：</p>
+<p><strong>普通模式（<strong><strong>Normal Mode</strong></strong>）</strong>：移动光标、执行命令（启动时默认模式）。</p>
+<p><strong>插入模式（<strong><strong>Insert Mode</strong></strong>）</strong>：输入&#x2F;编辑文本。</p>
+<p><strong>命令行模式（<strong><strong>Command-line Mode</strong></strong>）</strong>：保存、退出、搜索等操作。</p>
+<p><strong>2.</strong> <strong>启动与退出</strong></p>
+<p><strong>启动****Vim</strong>：终端输入 vim 文件名 （文件不存在则新建）。</p>
+<p>退出Vim：</p>
+<p>普通模式下按 : 进入命令行模式。</p>
+<p>:q 退出（未修改时）。</p>
+<p>:q! 强制退出（不保存修改）。</p>
+<p>:wq 保存并退出。</p>
+<p><strong>3.</strong> <strong>模式切换</strong></p>
+<p>普通模式 → 插入模式：</p>
+<p>i ：光标前插入。</p>
+<p>a ：光标后插入。</p>
+<p>o ：下一行插入。</p>
+<p><strong>插入模式</strong> <strong>→</strong> <strong>普通模式</strong>：</p>
+<p>按 Esc 或 Ctrl+[ 。</p>
+<p><strong>4.</strong> <strong>基础移动（普通模式）</strong></p>
+<p><strong>方向键</strong>： h（左） 、 j（下） 、 k（上） 、 l（右） 。</p>
+<p>单词移动：</p>
+<p>w ：跳到下一个单词开头。</p>
+<p>b ：跳到上一个单词开头。</p>
+<p>行内移动：</p>
+<p>0 ：行首， ^ ：第一个非空字符。</p>
+<p>$ ：行尾。</p>
+<p>全文移动：</p>
+<p>gg ：文件开头。</p>
+<p>G ：文件末尾。</p>
+<p>50G ：跳转到第50行。<strong>5.</strong> <strong>编辑文本</strong></p>
+<p>删除：</p>
+<p>x ：删除光标处字符。</p>
+<p>dw ：删除一个单词。</p>
+<p>dd ：删除整行。</p>
+<p>撤销与重做：</p>
+<p>u ：撤销操作。</p>
+<p>Ctrl + r ：重做撤销的操作。</p>
+<p>复制与粘贴：</p>
+<p>yy ：复制当前行。</p>
+<p>p ：粘贴到光标后， P ：粘贴到光标前。</p>
+<p><strong>6.</strong> <strong>查找与替换</strong></p>
+<p>查找：</p>
+<p>普通模式下按 &#x2F; ，输入关键词后回车（如 &#x2F;hello ）。</p>
+<p>n 跳转到下一个匹配， N 上一个。</p>
+<p>替换：</p>
+<p>替换当前行第一个匹配： :s&#x2F;old&#x2F;new</p>
+<p>替换当前行所有匹配： :s&#x2F;old&#x2F;new&#x2F;g</p>
+<p>全文替换： :%s&#x2F;old&#x2F;new&#x2F;g （加 c 确认每次替换，如 :%s&#x2F;old&#x2F;new&#x2F;gc ）。</p>
+<p><strong>7.</strong> <strong>可视模式（<strong><strong>Visual Mode</strong></strong>）</strong></p>
+<p>v ：进入字符选择模式（按字符选择）。</p>
+<p>V ：进入行选择模式（按行选择）。</p>
+<p>Ctrl + v ：进入块选择模式（垂直选择）。</p>
+<p><strong>操作</strong>：选中后按 y 复制， d 删除， p 粘贴。</p>
+<p><strong>8.</strong> <strong>配置**<strong>Vim</strong></strong>（<strong><strong>.vimrc</strong></strong>）**</p>
+<p>创建配置文件： vim ~&#x2F;.vimrc</p>
+<p>常用配置示例：</p>
+<p>vim</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set number &quot; 显示行号</span><br><span class="line"></span><br><span class="line">syntax on &quot; 语法高亮</span><br><span class="line"></span><br><span class="line">set tabstop=4 &quot; Tab缩进4空格</span><br><span class="line"></span><br><span class="line">set expandtab &quot; 用空格代替Tab**VI/VIM****基础操作练习**</span><br></pre></td></tr></table></figure>
+
+<p><strong>初始文件准备</strong></p>
+<p>bash</p>
+<p><strong>文件初始内容（手动输入）</strong></p>
+<p>text</p>
+<p><strong>分步练习任务</strong></p>
+<p>\1. <strong>打开文件并进入插入模式，在末尾添加一行</strong> pineapple</p>
+<p>vim</p>
+<p>\2. <strong>复制第<strong><strong>2</strong></strong>行（<strong><strong>banana</strong></strong>）并粘贴到第<strong><strong>4</strong></strong>行下方</strong></p>
+<p>vim</p>
+<p>\3. <strong>删除第<strong><strong>3</strong></strong>行（<strong><strong>orange</strong></strong>）</strong></p>
+<p>vim</p>
+<p>\4. <strong>显示行号并跳转到第<strong><strong>5</strong></strong>行（原<strong><strong>pear</strong></strong>行）</strong></p>
+<p>vim</p>
+<p>vim &#x2F;home&#x2F;student&#x2F;file.txt # 创建并打开文件</p>
+<p>apple</p>
+<p>banana</p>
+<p>orange</p>
+<p>grape</p>
+<p>pear</p>
+<p>G # 跳转到文件末尾</p>
+<p>i # 进入插入模式</p>
+<p>（输入pineapple后按ESC）</p>
+<p>2G # 跳转到第2行</p>
+<p>yy # 复制当前行</p>
+<p>4G # 跳转到第4行</p>
+<p>p # 粘贴</p>
+<p>3G # 跳转到第3行</p>
+<p>dd # 删除当前行</p>
+<p>:set nu # 显示行号</p>
+<p>5G # 跳转到第5行5. <strong>将光标移动到行首，插入</strong> watermelon</p>
+<p>vim</p>
+<p>\6. <strong>查找所有</strong> apple <strong>并替换为</strong> mango <strong>（仅替换前<strong><strong>2</strong></strong>行）</strong></p>
+<p>vim</p>
+<p>\7. <strong>撤销最后一次替换操作</strong></p>
+<p>vim</p>
+<p>\8. <strong>强制退出不保存（模拟误操作）</strong></p>
+<p>vim</p>
+<p>\9. <strong>重新打开文件并另存为</strong> backup.txt</p>
+<p>bash</p>
+<p>\10. <strong>保存并退出</strong></p>
+<p>vim</p>
+<p><strong>最终文件内容验证</strong></p>
+<p>text</p>
+<p>\1. <strong>基础操作</strong></p>
+<p>i 进入插入模式、 G 跳转行尾</p>
+<p>yy 复制、 p 粘贴</p>
+<p>0 # 跳转到行首</p>
+<p>i # 进入插入模式</p>
+<p>（输入watermelon后按ESC）</p>
+<p>:1,2s&#x2F;apple&#x2F;mango&#x2F;g # 直接指定行号范围替换</p>
+<p>u # 撤销操作</p>
+<p>:q! # 强制退出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /home/student/file.txt # 重新打开</span><br><span class="line"></span><br><span class="line">:w /home/student/backup.txt # 另存为备份</span><br></pre></td></tr></table></figure>
+
+<p>:wq # 保存退出</p>
+<p>apple</p>
+<p>banana</p>
+<p>grape</p>
+<p>banana</p>
+<p>watermelonpear<strong>符号</strong> </p>
+<p><strong>文件类型</strong> </p>
+<p><strong>典型示例</strong> </p>
+<p><strong>可视化特征</strong></p>
+<p>- </p>
+<p>普通文件 </p>
+<p>.txt&#x2F;.sh&#x2F;.png </p>
+<p>黑色文本&#x2F;蓝色可执行文件</p>
+<p>d </p>
+<p>目录文件 </p>
+<p>&#x2F;home &#x2F;var&#x2F;log </p>
+<p>蓝色文件夹图标</p>
+<p>b </p>
+<p>块设备文件 </p>
+<p>&#x2F;dev&#x2F;sda </p>
+<p>特殊设备标识</p>
+<p>c </p>
+<p>字符设备文件 </p>
+<p>&#x2F;dev&#x2F;tty </p>
+<p>终端设备标识</p>
+<p>l </p>
+<p>符号链接文件 </p>
+<p>&#x2F;usr&#x2F;bin&#x2F;python -&gt; python3 </p>
+<p>浅蓝色带箭头图标</p>
+<p>dd 删除行</p>
+<p>\2. <strong>行号与跳转</strong></p>
+<p>:set nu 显示行号、 nG 跳转行号（视频中 58G 操作）</p>
+<p>\3. <strong>替换与撤销</strong></p>
+<p>:1,2s&#x2F;apple&#x2F;mango&#x2F;g 行号范围替换</p>
+<p>u 撤销</p>
+<p>\4. <strong>文件管理</strong></p>
+<p>:wq 保存退出、 :q! 强制退出</p>
+<p>:w 新文件名 另存为</p>
+<p><strong>文件类型</strong></p>
+<p><strong>1</strong><strong>、学习目标</strong></p>
+<p>\1. 掌握 ls -l 命令查看文件类型</p>
+<p>\2. 理解不同文件类型的符号标识</p>
+<p>\3. 认识颜色显示与文件类型的关联性</p>
+<p>\4. 学会准确判断文件类型的方法</p>
+<p><strong>2</strong>**、核心命令：**ls **-**l</p>
+<p><strong>命令格式</strong></p>
+<p>bash</p>
+<p><strong>输出示例</strong></p>
+<p>bashuser</p>
+<p><strong>3</strong><strong>、文件类型符号说明（第一列第一个字符）</strong></p>
+<p>ls -l [文件名&#x2F;目录名]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-rw-r--r-- 1 user group 4096 Aug 1 10:00 example.txt</span><br><span class="line"></span><br><span class="line">drwxr-xr-x 2 user group 4096 Aug 1 10:01 my_folder**4****、操作演示**</span><br><span class="line"></span><br><span class="line">**1.** **查看普通文件类型</span><br></pre></td></tr></table></figure>
+
+<p>**</p>
+<p>bash</p>
+<p><strong>2.</strong> <strong>查看目录文件类型</strong></p>
+<p>bash</p>
+<p><strong>3.</strong> <strong>查看设备文件类型</strong></p>
+<p>bash</p>
+<p><strong>5</strong><strong>、颜色显示的不可靠性</strong></p>
+<p>\1. <strong>环境差异</strong>：不同Linux发行版默认颜色方案不同</p>
+<p>\2. <strong>配置影响</strong>：用户可能自定义 LS_COLORS 环境变量</p>
+<p>\3. <strong>终端限制</strong>：远程SSH连接可能丢失颜色信息</p>
+<p>\4. <strong>关键原则</strong>： 文件颜色≠类型标识 ，必须以 ls -l 输出为准</p>
+<p><strong>6</strong><strong>、综合练习</strong></p>
+<p><strong>练习**<strong>1</strong></strong>：类型判断**</p>
+<p>bash</p>
+<p>\1. 指出每个文件的类型符号</p>
+<p>\2. 说明对应的文件类型</p>
+<p>\3. 验证文件实际类型是否符号显示</p>
+<p><strong>用户管理</strong></p>
+<p>ls -l &#x3D; ll &#x2F;etc&#x2F;passwd</p>
+<p># 输出示例：-rw-r–r– 1 root root 1234 Aug 1 10:00 passwd</p>
+<p>ls -ld &#x2F;var&#x2F;log # 注意加-d参数查看目录本身</p>
+<p># 输出示例：drwxr-xr-x 10 root root 4096 Aug 1 09:00 log</p>
+<p>ls -l &#x2F;dev&#x2F;sda</p>
+<p># 输出示例：brw-rw—- 1 root disk 8, 0 Aug 1 08:00 sda</p>
+<p>ls -l &#x2F;bin&#x2F;ls &#x2F;home &#x2F;dev&#x2F;tty**1.<strong><strong>用户</strong></strong>&#x2F;**<strong>组的基本概念</strong></p>
+<p><strong>1.1</strong> <strong>概念</strong></p>
+<p>Users and groups：</p>
+<p>. Every process (running program) on the system runs as a particular user.</p>
+<p>. Every file is owned by a particular user.</p>
+<p>. Access to files and directories are restricted by user.</p>
+<p>. The user associated with a running process determines the files and directories accessible to </p>
+<p>that process.</p>
+<p><strong>1.2</strong> <strong>用户的作用</strong></p>
+<p>查看当前登录的用户</p>
+<p>查看文件的owner</p>
+<p>查看运行进程的username：</p>
+<p>[root@xnha ~]# id</p>
+<p>uid&#x3D;0(root) gid&#x3D;0(root) 组&#x3D;0(root)</p>
+<p>[root@xnha ~]# ll &#x2F;home #ls -l &#x3D; ll</p>
+<p>总用量 8</p>
+<p>drwx——. 17 abc abc 4096 3月 4 20:04 abc</p>
+<p>drwx——. 15 test test 4096 11月 6 03:58 test</p>
+<p>drwx——. 3 user1 user1 78 10月 28 21:15 user1</p>
+<p>drwx——. 4 user2 user2 129 10月 27 22:43 user2</p>
+<p>drwx——. 3 user3 user3 78 10月 27 21:13 user3</p>
+<p>drwx——. 3 user4 group1 78 10月 27 21:47 user4</p>
+<p>drwx——. 4 user5 user5 113 10月 27 22:23 user5</p>
+<p>drwx——. 3 user6 user6 78 10月 27 21:48 user6</p>
+<p>[root@xnha ~]# ps aux</p>
+<p>USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND</p>
+<p>root 1 0.0 0.7 175744 13924 ? Ss 08:55 0:02</p>
+<p>&#x2F;usr&#x2F;lib&#x2F;syst</p>
+<p>root 2 0.0 0.0 0 0 ? S 08:55 0:00</p>
+<p>[kthreadd]</p>
+<p>root 3 0.0 0.0 0 0 ? I&lt; 08:55 0:00 [rcu_gp]</p>
+<p>root 4 0.0 0.0 0 0 ? I&lt; 08:55 0:00</p>
+<p>[rcu_par_gp]</p>
+<p>root 5 0.0 0.0 0 0 ? I&lt; 08:55 0:00</p>
+<p>[slub_flushwq</p>
+<p>root 6 0.0 0.0 0 0 ? I 08:55 0:02<strong>1.3</strong> <strong>用户组存储的信息</strong></p>
+<p>用户基本信息文件 &#x2F;etc&#x2F;passwd</p>
+<p><strong>文件结构解析</strong></p>
+<p><strong>字段详细说明</strong></p>
+<p>\1. <strong>用户名</strong></p>
+<p>登录系统的名字（如 root ）。</p>
+<p>\2. <strong>密码占位符</strong></p>
+<p>实际密码存储在 &#x2F;etc&#x2F;shadow ，此处为 x 。</p>
+<p>\3. <strong>UID</strong><strong>（用户身份证号）</strong></p>
+<p>系统约定（RHEL7）：</p>
+<p>0 ：特权用户（root）</p>
+<p>1~999 ：系统用户</p>
+<p>1000+ ：普通用户</p>
+<p>Root 用户特性：</p>
+<p>uid 为 0 ，拥有最高权限。</p>
+<p>可覆盖文件系统权限、管理软件和系统文件。</p>
+<p>控制大多数硬件设备。</p>
+<p>\4. <strong>GID</strong><strong>（组号）</strong></p>
+<p>默认规则：</p>
+<p>每创建一个用户，系统会自动创建同名组。</p>
+<p>\5. <strong>描述</strong></p>
+<p>用户描述信息（如职位、部门），默认与用户名一致。</p>
+<p>\6. <strong>家目录（<strong><strong>HOME</strong></strong>）</strong></p>
+<p>用户登录后的默认目录（如 &#x2F;root ）。</p>
+<p>root:x:0:0:root:&#x2F;root:&#x2F;bin&#x2F;bash</p>
+<p>用户名:x:uid:gid:描述:HOME:shell7. <strong>登录</strong> <strong>Shell</strong></p>
+<p>用户的命令解释器（如 &#x2F;bin&#x2F;bash ）。</p>
+<p>若设置为 &#x2F;sbin&#x2F;nologin ，用户无法登录系统。</p>
+<p>用户密码信息文件 &#x2F;etc&#x2F;shadow</p>
+<p>*<em>字段说明（<strong><strong>9</strong></strong>列，冒号分隔）</em>*</p>
+<p>\1. <strong>登录名</strong></p>
+<p>与 &#x2F;etc&#x2F;passwd 中的用户名一致（如 root ）。</p>
+<p>\2. <strong>加密口令</strong></p>
+<p>格式：</p>
+<p>$加密算法$salt$加密结果</p>
+<p>$1 ：MD5</p>
+<p>$5 ：SHA-256</p>
+<p>$6 ：SHA-512</p>
+<p>$2 ：Blowfish</p>
+<p>特殊标记：</p>
+<p>* ：账号被锁定（禁止登录）。</p>
+<p>!! ：密码已过期。</p>
+<p>空：无密码（可直接登录）。</p>
+<p>\3. <strong>最后一次修改时间</strong></p>
+<p>从 <strong>1970<strong><strong>年</strong></strong>1<strong><strong>月</strong></strong>1****日</strong>（UNIX纪元）到密码最后一次修改的天数（如 15636 ）。</p>
+<p>\4. <strong>最小时间间隔</strong></p>
+<p>密码修改后，必须经过该天数才能再次修改（ 0 表示无限制）。</p>
+<p>\5. <strong>最大有效天数</strong></p>
+<p>密码有效期（如 99999 表示永久有效）。</p>
+<p>\6. <strong>警告天数</strong></p>
+<p>密码到期前 <strong>提前多少天</strong> 发出警告（如 7 天）。</p>
+<p>\7. <strong>不活动天数</strong></p>
+<p>密码过期后，允许用户 <strong>不修改密码</strong> 继续登录的天数（超过则锁定账号）。</p>
+<p>\8. <strong>失效时间</strong></p>
+<p>账号的绝对过期时间（从 1970年1月1日起的天数，到期后账号禁用）。</p>
+<p>\9. <strong>保留字段</strong></p>
+<p>未使用，留空。</p>
+<p>示例解析</p>
+<p>root:$1$MYG2NDG6$a1wtyr5GDM2esAPjug0YP0:15636:0:99999:7:: :</p>
+<p><strong>加密算法</strong>： $1 （MD5）。</p>
+<p><strong>salt</strong> <strong>值</strong>： MYG2NDG6 。</p>
+<p><strong>加密结果</strong>： a1wtyr5GDM2esAPjug0YP0 。</p>
+<p>密码策略：最后一次修改时间：1970年1月1日后的第 15636 天。</p>
+<p>密码永久有效（ 99999 天）。</p>
+<p>密码到期前 7 天发出警告。</p>
+<p>注意事项</p>
+<p><strong>密码字段为空</strong>：用户无需密码即可登录（高风险，不推荐）。</p>
+<p><strong>锁定账号</strong>：在密码字段前添加 * 或 !! 。</p>
+<p><strong>时间计算基准</strong>：不同系统可能以不同时间为起点（如 SCOLinux 使用 1970年1月1日）。</p>
+<p>组信息文件 &#x2F;etc&#x2F;group</p>
+<p>&#x2F;etc&#x2F;group 文件结构解析</p>
+<p>字段说明（4列，冒号分隔）</p>
+<p>\1. <strong>组名</strong></p>
+<p>组的名称（如 root ）。</p>
+<p>\2. <strong>组密码</strong></p>
+<p>一般为 x ，实际组密码存储在 &#x2F;etc&#x2F;shadow （通常不设置）。</p>
+<p>\3. <strong>组**<strong>ID</strong></strong>（<strong><strong>GID</strong></strong>）**</p>
+<p>组的唯一标识符（如 0 ）。</p>
+<p>\4. <strong>组成员</strong></p>
+<p>属于该组的用户列表（多个用户用逗号分隔）。</p>
+<p><strong>默认值</strong>：空（仅包含同名用户，但默认不显示）。</p>
+<p><strong>示例解析</strong></p>
+<p><strong>组名</strong>： root</p>
+<p><strong>组密码</strong>： x （无实际密码）。</p>
+<p><strong>组****ID</strong>： 0 （特权组）。</p>
+<p><strong>组成员</strong>：空（未显式添加用户时仅包含同名用户 root ）。</p>
+<p>注意事项</p>
+<p><strong>基本组</strong>：用户创建时自动生成同名组（如用户 user01 的组 user01 ）。</p>
+<p><strong>附加组</strong>：用户可手动加入其他组（如将用户加入 hr 组）。</p>
+<p><strong>用户</strong>**&#x2F;**<strong>组的管理</strong></p>
+<p><strong>用户管理</strong></p>
+<p>root:x:0:</p>
+<p>组名:组密码:组ID:组成员</p>
+<p>root:x:0:<strong>1.</strong> <strong>用户创建</strong></p>
+<p><strong>1.1</strong> <strong>默认创建（自动生成同名基本组）</strong></p>
+<p>bash</p>
+<p>说明：</p>
+<p>用户编号（UID）：唯一用户标识（如 1001 ）。</p>
+<p>组编号（GID）：同名基本组的标识（如 1001 ）。</p>
+<p><strong>规则</strong>：未指定选项时，系统自动创建同名组作为用户的主组（Primary Group）。</p>
+<p><strong>1.2</strong> <strong>指定选项创建</strong></p>
+<p>bash</p>
+<p>验证：</p>
+<p>bash</p>
+<p><strong>2.</strong> <strong>用户删除</strong></p>
+<p>bash</p>
+<p>注意事项：</p>
+<p>-r 选项会删除用户家目录和邮箱文件（ &#x2F;var&#x2F;spool&#x2F;mail ）。</p>
+<p>未加 -r 会导致残留文件，可能影响后续创建同名用户。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# useradd user01</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# id user01</span><br><span class="line"></span><br><span class="line">uid=1001(user01) gid=1001(user01) 组=1001(user01)</span><br><span class="line"></span><br><span class="line">\# 指定 UID</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# useradd user02 -u 1503</span><br><span class="line"></span><br><span class="line">\# 制定备注</span><br><span class="line"></span><br><span class="line">[root@xnha ~]# tail -3 /etc/passwd</span><br><span class="line"></span><br><span class="line">user1:x:1001:1001::/home/user1:/bin/bash</span><br><span class="line"></span><br><span class="line">user2:x:1503:1503::/home/user2:/bin/bash</span><br><span class="line"></span><br><span class="line">user3:x:1504:1504:第三个用户:/home/user3:/bin/bash</span><br><span class="line"></span><br><span class="line">\# 指定家目录</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# useradd user03 -d /user03 /home/user03</span><br><span class="line"></span><br><span class="line">grep user03 /etc/passwd # 查看家目录是否修改</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# userdel -r user02 # 彻底删除用户及家目录**3.** **用户</span><br></pre></td></tr></table></figure>
+
+<p>密码管理**</p>
+<p>**方法一：**<strong>root</strong> <strong>修改其他用户密码</strong></p>
+<p>bash</p>
+<p><strong>方法二：用户自行修改密码</strong></p>
+<p>bash</p>
+<p><strong>4.</strong> <strong>用户属性修改</strong></p>
+<p><strong>修改登录</strong> <strong>Shell</strong></p>
+<p>bash</p>
+<p>验证：</p>
+<p>bash</p>
+<p><strong>5.</strong> <strong>组成员管理</strong></p>
+<p><strong>将用户追加到附加组</strong></p>
+<p>bash</p>
+<p><strong>从组中移除用户</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# passwd alice # 输入两次新密码</span><br><span class="line"></span><br><span class="line">[zhuzhu@localhost ~]$ passwd # 需输入原密码</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# usermod -s /sbin/nologin user02 # 禁用用户登录</span><br><span class="line"></span><br><span class="line">grep user02 /etc/passwd # 查看登录Shell字段是否为/sbin/nologin</span><br><span class="line"></span><br><span class="line">\# 语法</span><br><span class="line"></span><br><span class="line">usermod -aG 组名 用户名</span><br><span class="line"></span><br><span class="line">\# 示例</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# usermod -aG hr user02</span><br><span class="line"></span><br><span class="line">\# 验证</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# id user02</span><br><span class="line"></span><br><span class="line">uid=1002(user02) gid=1002(user02) 组=1002(user02),1005(hr)</span><br><span class="line"></span><br><span class="line">\# 语法</span><br><span class="line"></span><br><span class="line">gpasswd -d 用户名 组名</span><br><span class="line"></span><br><span class="line">\# 示例</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# gpasswd -d user02 hr**用户组管理**</span><br><span class="line"></span><br><span class="line">**1.** **组基础操作</span><br></pre></td></tr></table></figure>
+
+<p>**</p>
+<p><strong>创建组</strong></p>
+<p>bash</p>
+<p><strong>删除组</strong></p>
+<p>bash</p>
+<p><strong>2.</strong> <strong>组分类</strong></p>
+<p>\1. <strong>基本组</strong></p>
+<p>随用户自动创建的同名组（如 user01 组）。</p>
+<p>用户文件默认属组为基本组。</p>
+<p>\2. <strong>附加组</strong></p>
+<p>用户手动加入的其他组（如 hr 组）。</p>
+<p>用于扩展权限管理。</p>
+<p><strong>3.</strong> <strong>组成员管理示例</strong></p>
+<p>\1. <strong>创建共享目录</strong></p>
+<p>bash</p>
+<p>\2. <strong>验证权限</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line"></span><br><span class="line">\# 默认创建</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# groupadd hr</span><br><span class="line"></span><br><span class="line">\# 指定 GID</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# groupadd net01 -g 1007</span><br><span class="line"></span><br><span class="line">\# 验证</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# grep &#x27;net01&#x27; /etc/group</span><br><span class="line"></span><br><span class="line">net01:x:1007:</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# groupdel net01</span><br><span class="line"></span><br><span class="line">mkdir /shared</span><br><span class="line"></span><br><span class="line">chgrp hr /shared # 设置属组为hr</span><br><span class="line"></span><br><span class="line">chmod 770 /shared # 赋予组读写执行权限</span><br><span class="line"></span><br><span class="line">su - user02</span><br><span class="line"></span><br><span class="line">touch /shared/test.txt # 成功则权限生效**注意事项</span><br></pre></td></tr></table></figure>
+
+<p>**</p>
+<p>\1. 修改 UID&#x2F;GID 前备份：</p>
+<p>bash</p>
+<p>\2. 组权限生效条件：</p>
+<p>用户需重新登录或使用 newgrp 命令。</p>
+<p>\3. <strong>删除用户必用</strong> **-**r ：避免残留文件导致后续操作失败。</p>
+<p>Linux 用户与组管理综合实验</p>
+<p><strong>实验目标</strong></p>
+<p>\1. 掌握用户和组的创建、删除及属性修改。</p>
+<p>\2. 理解用户配置文件（ &#x2F;etc&#x2F;passwd 、 &#x2F;etc&#x2F;shadow 、 &#x2F;etc&#x2F;group ）的结构。</p>
+<p>\3. 学会设置用户密码、组成员权限及共享目录访问控制。</p>
+<p><strong>实验步骤</strong></p>
+<p><strong>1.</strong> <strong>创建用户与验证基本信息</strong></p>
+<p>\1. <strong>默认创建用户</strong> user01 ：</p>
+<p>bash</p>
+<p>\2. <strong>指定选项创建用户</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">创建用户 user02 ，指定 UID 为 1503 ：</span><br><span class="line"></span><br><span class="line">bash</span><br><span class="line"></span><br><span class="line">创建用户 user03 ，指定家目录为 /user03 ：</span><br><span class="line"></span><br><span class="line">bash</span><br><span class="line"></span><br><span class="line">find / -user 旧UID -exec chown 新UID &#123;&#125; \; # 修复文件属主</span><br><span class="line"></span><br><span class="line">useradd user01</span><br><span class="line"></span><br><span class="line">id user01 # 验证 UID/GID 和同名基本组</span><br><span class="line"></span><br><span class="line">tail -n 1 /etc/passwd # 查看用户信息</span><br><span class="line"></span><br><span class="line">useradd user02 -u 1503</span><br><span class="line"></span><br><span class="line">id user02 # 验证 UID 是否生效</span><br><span class="line"></span><br><span class="line">useradd user03 -d /user03</span><br></pre></td></tr></table></figure>
+
+<p>ls -ld &#x2F;user03 # 验证家目录是否存在<strong>2.</strong> <strong>用户密码管理</strong></p>
+<p>\1. <strong>Root</strong> <strong>为用户</strong> user01 <strong>设置密码</strong>：</p>
+<p>bash</p>
+<p>\2. <strong>用户</strong> user01 <strong>自行修改密码</strong>：</p>
+<p>bash</p>
+<p><strong>3.</strong> <strong>修改用户属性</strong></p>
+<p>\1. <strong>禁用用户</strong> user02 <strong>的登录</strong> <strong>Shell</strong>：</p>
+<p>bash</p>
+<p>\2. <strong>尝试登录</strong> user02 <strong>（应失败）</strong>：</p>
+<p>bash</p>
+<p><strong>4.</strong> <strong>用户组管理</strong></p>
+<p>\1. <strong>创建组</strong> hr <strong>和</strong> dev ：</p>
+<p>bash</p>
+<p>\2. <strong>将用户加入附加组</strong>：</p>
+<p>bash</p>
+<p>\3. <strong>从组中移除用户</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line"></span><br><span class="line">passwd user01 # 输入两次密码</span><br><span class="line"></span><br><span class="line">grep user01 /etc/shadow # 查看加密后的密码字段</span><br><span class="line"></span><br><span class="line">su - user01 # 切换到 user01</span><br><span class="line"></span><br><span class="line">passwd # 输入原密码后修改新密码</span><br><span class="line"></span><br><span class="line">exit # 返回 root</span><br><span class="line"></span><br><span class="line">usermod -s /sbin/nologin user02</span><br><span class="line"></span><br><span class="line">grep user02 /etc/passwd # 验证登录 Shell 是否修改</span><br><span class="line"></span><br><span class="line">su - user02 # 预期提示“此账户不可用”</span><br><span class="line"></span><br><span class="line">groupadd hr</span><br><span class="line"></span><br><span class="line">groupadd dev -g 2000 # 指定 GID 为 2000</span><br><span class="line"></span><br><span class="line">tail -n 2 /etc/group # 查看组信息</span><br><span class="line"></span><br><span class="line">usermod -aG hr user01 # 将 user01 加入 hr 组</span><br><span class="line"></span><br><span class="line">usermod -aG dev user02 # 将 user02 加入 dev 组</span><br><span class="line"></span><br><span class="line">id user01 # 验证组成员（应显示 hr 组）</span><br><span class="line"></span><br><span class="line">id user02 # 验证组成员（应显示 dev 组）**5.** **共享目录权限验证</span><br></pre></td></tr></table></figure>
+
+<p>**</p>
+<p>\1. <strong>创建共享目录并设置权限</strong>：</p>
+<p>bash</p>
+<p>\2. <strong>验证组成员权限</strong>：</p>
+<p>用户 user02 （属于 dev 组）：</p>
+<p>bash</p>
+<p>用户 user01 （不在 dev 组）：</p>
+<p>bash</p>
+<p><strong>6.</strong> <strong>清理实验环境</strong></p>
+<p>\1. <strong>删除用户及其家目录</strong>：</p>
+<p>bash</p>
+<p>\2. <strong>删除组</strong>：</p>
+<p>bash</p>
+<p>\3. <strong>删除共享目录</strong>：</p>
+<p>bash</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">gpasswd -d user01 hr # 将 user01 移出 hr 组</span><br><span class="line"></span><br><span class="line">id user01 # 验证组成员是否移除</span><br><span class="line"></span><br><span class="line">mkdir /shared</span><br><span class="line"></span><br><span class="line">chgrp dev /shared # 设置属组为 dev</span><br><span class="line"></span><br><span class="line">chmod 770 /shared # 赋予组读写执行权限</span><br><span class="line"></span><br><span class="line">ls -ld /shared # 验证权限</span><br><span class="line"></span><br><span class="line">su - user02</span><br><span class="line"></span><br><span class="line">touch /shared/test.txt # 应成功创建文件</span><br><span class="line"></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">su - user01</span><br><span class="line"></span><br><span class="line">touch /shared/test.txt # 应提示“权限被拒绝”</span><br><span class="line"></span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line">userdel -r user01</span><br><span class="line"></span><br><span class="line">userdel -r user02</span><br><span class="line"></span><br><span class="line">userdel -r user03</span><br><span class="line"></span><br><span class="line">groupdel hr</span><br></pre></td></tr></table></figure>
+
+<p>groupdel dev<strong>实验总结</strong></p>
+<p><strong>核心知识点</strong></p>
+<p>\1. <strong>用户管理</strong>：</p>
+<p>useradd 、 usermod 、 userdel 命令的使用。</p>
+<p>用户密码策略通过 &#x2F;etc&#x2F;shadow 控制。</p>
+<p>禁用登录 Shell 可限制用户访问。</p>
+<p>\2. <strong>组管理</strong>：</p>
+<p>groupadd 、 groupdel 、 gpasswd 命令的使用。</p>
+<p>基本组（自动创建）与附加组（手动加入）的区别。</p>
+<p>通过组权限实现共享目录的访问控制。</p>
+<p>\3. <strong>权限验证</strong>：</p>
+<p>使用 id 查看用户组关系。</p>
+<p>通过 chgrp 和 chmod 设置目录权限。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /share</span><br></pre></td></tr></table></figure>
+
+<p>d</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">燕子</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/')">vim编辑器</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=vim编辑器&amp;url=http://example.com/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/&amp;pic=https://yanzi-fairy1.oss-cn-beijing.aliyuncs.com/202509031614800.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/08/14/html%20%E6%A0%87%E7%AD%BE/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/08/14/html%20%E6%A0%87%E7%AD%BE/" title="No title">No title</a><time datetime="2025-08-14T12:17:32.267Z" title="Created 2025-08-14 20:17:32">2025-08-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/" title="vim编辑器"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://yanzi-fairy1.oss-cn-beijing.aliyuncs.com/202509031614800.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vim编辑器"/></a><div class="content"><a class="title" href="/2025/07/27/2025-7-27-vim%E7%BC%96%E8%BE%91%E5%99%A8/" title="vim编辑器">vim编辑器</a><time datetime="2025-07-26T16:00:00.000Z" title="Created 2025-07-27 00:00:00">2025-07-27</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2025 By <a class="footer-bar-link" href="/" title="燕子" target="_blank">燕子</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">0</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.14",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 燕子 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
